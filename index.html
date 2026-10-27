@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sridhar S | Technical Writer</title>
+<meta name="description" content="Technical writer with XML authoring and structured content experience, backed by 10+ years of engineering teaching. Setup, troubleshooting, FAQ and specification content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F6F8F7; --surface:#FFFFFF; --ink:#14261F; --muted:#51635B; --line:#D6DFDA;
+  --accent:#0E5A4F; --accent-ink:#FFFFFF; --pink:#2F5FA7; --tint:#E2EEE9;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1B17; --surface:#16261F; --ink:#EAF4EF; --muted:#9DB5AA; --line:#2A4136;
+    --accent:#6FCFB4; --accent-ink:#0F1B17; --pink:#8DB4F0; --tint:#1B332A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1B17; --surface:#16261F; --ink:#EAF4EF; --muted:#9DB5AA; --line:#2A4136;
+  --accent:#6FCFB4; --accent-ink:#0F1B17; --pink:#8DB4F0; --tint:#1B332A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible,.tablewrap:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+header.top{padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--ink);text-decoration:none}
+nav a{margin-left:1.1rem;color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--ink)}
+.hero{padding:3.5rem 0 3rem}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,7vw,3.9rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 1.25rem;max-width:18ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:38rem;margin:0 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent);background:transparent}
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;line-height:1.2;margin:0 0 .4rem;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 1.75rem}
+.job{margin-bottom:2rem}
+.job:last-child{margin-bottom:0}
+.job h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0}
+.job .meta{color:var(--muted);font-size:.97rem;margin:.1rem 0 .7rem}
+.job ul{margin:0;padding-left:1.1rem}
+.job li{margin-bottom:.4rem;max-width:40rem}
+.toc{list-style:none;margin:0;padding:0}
+.toc>li{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.toc>li:last-child{border-bottom:0}
+.toc .title{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.3;display:block}
+.toc .kind{color:var(--pink);font-weight:600;font-size:.95rem;display:block;margin-top:.1rem}
+.toc p{margin:.45rem 0 0;color:var(--muted);max-width:40rem}
+.toc .links{margin-top:.6rem;font-weight:600;font-size:.98rem}
+.toc h4{font-size:1rem;font-weight:600;margin:1.25rem 0 .4rem}
+.toc ul,.toc ol{margin:.3rem 0;padding-left:1.2rem;max-width:40rem}
+.toc li li,.toc ul li,.toc ol li{margin-bottom:.4rem}
+details{margin-top:1rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.2rem 1.2rem}
+summary{cursor:pointer;font-weight:600;color:var(--accent);padding:.8rem 0}
+.article h3{font-family:var(--serif);font-size:1.15rem;margin:1.5rem 0 .3rem}
+.article h4{font-size:1rem;margin:.9rem 0 .2rem}
+.article p,.article li{color:var(--ink);max-width:40rem}
+.article .warn{background:var(--tint);border-left:4px solid var(--pink);border-radius:0 10px 10px 0;padding:.6rem 1rem;margin:.8rem 0}
+.tablewrap{overflow-x:auto;margin:.6rem 0;max-width:40rem;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.tablewrap table{border-collapse:collapse;width:100%;min-width:24rem;font-size:.97rem}
+.tablewrap caption{text-align:left;padding:.6rem .9rem;color:var(--muted);font-size:.9rem}
+.tablewrap th,.tablewrap td{text-align:left;padding:.55rem .9rem;border-top:1px solid var(--line);vertical-align:top}
+.tablewrap th{font-weight:600}
+.note{background:var(--tint);border-left:4px solid var(--pink);border-radius:0 10px 10px 0;padding:.7rem 1rem;margin:1rem 0 0;font-size:.95rem;max-width:40rem}
+.groups{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.group h3{font-size:1rem;margin:0 0 .6rem;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{background:var(--tint);color:var(--ink);border-radius:999px;padding:.2rem .7rem;font-size:.9rem}
+.edu p{margin:.2rem 0}
+.edu h3{font-size:1rem;font-weight:600;margin:1.2rem 0 .3rem}
+.contact{background:var(--tint);border-radius:18px;padding:2rem 1.5rem;margin:2rem 0 0;border:0}
+.contact h2{margin-bottom:.5rem}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Sridhar S</a>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>I turn product manuals into clear, usable documentation.</h1>
+      <p class="lead">Technical writer with experience in XML authoring, structured content and documentation QA, backed by 10+ years of teaching engineering. I write setup guides, troubleshooting steps, FAQs and specifications in plain language.</p>
+      <div class="btns">
+        <a class="btn primary" href="#experience">See my experience</a>
+        <a class="btn ghost" href="#work">See my writing sample</a>
+        <a class="btn ghost" href="https://www.youtube.com/@KuttiesPlusTamil/videos" target="_blank" rel="noopener">Kutties Plus channel</a>
+        <a class="btn ghost" href="mailto:sridharsrimech@gmail.com">Email me</a>
+      </div>
+    </div>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="sub">Technical documentation, built on a long background in engineering education.</p>
+      <div class="job">
+        <h3>Associate Research, Sutherland Global Services Pvt. Ltd.</h3>
+        <p class="meta">June 2025 to September 2026</p>
+        <ul>
+          <li>Selected products for documentation using an internal product selection platform.</li>
+          <li>Retrieved product manuals through an AI-assisted content retrieval system and extracted setup, troubleshooting, FAQ and specification content.</li>
+          <li>Authored structured XML documentation in a professional XML editor and managed documentation objects in a cloud-based CMS.</li>
+          <li>Rewrote and organised technical information from manufacturer manuals into clear, customer-facing content.</li>
+          <li>Published finalised documentation through an enterprise publishing platform, with QA checks for compliance with client standards.</li>
+          <li>Worked across ASIN Authoring, Translation Authoring, RTMP and Migration projects.</li>
+          <li>Collaborated with Quality Analysts and cross-functional teams to improve documentation quality, and met productivity and quality targets by following SOPs.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Head of Department, Automobile Engineering, Kar Polytechnic College, Ambur</h3>
+        <p class="meta">June 2023 to June 2025</p>
+        <ul>
+          <li>Coordinated with faculty to maintain academic quality and student performance records.</li>
+          <li>Managed departmental academic activities, curriculum planning and student project guidance.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Lecturer, Automobile Engineering, Kar Polytechnic College, Ambur</h3>
+        <p class="meta">July 2019 to May 2023</p>
+        <ul>
+          <li>Delivered theory and laboratory sessions, guided student projects and maintained academic documentation.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Entrepreneur, Floriculture Business (self-employed)</h3>
+        <p class="meta">May 2017 to June 2019</p>
+        <ul>
+          <li>Grew flowers using polyhouse technology, sold the produce and handled day-to-day business operations.</li>
+          <li>Completed an HVAC course during this period.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Lecturer, Mechanical Engineering, Kar Polytechnic College, Ambur</h3>
+        <p class="meta">June 2013 to April 2017</p>
+        <ul>
+          <li>Delivered theory and laboratory sessions, guided student projects and maintained academic documentation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <p class="sub">A technical writing sample and a content planning project.</p>
+      <ul class="toc">
+        <li>
+          <span class="title">How to Maintain a Two-Wheeler: A Complete Motorcycle Maintenance Guide</span>
+          <span class="kind">Technical article, sample</span>
+          <p>A step-by-step maintenance guide covering oil, tyres, chain, brakes, battery, air filter and coolant, with a service schedule table and clear safety warnings. I wrote it to show how I turn technical subject matter into steps a rider can follow.</p>
+          <details>
+            <summary>Read the full article</summary>
+            <div class="article">
+              <h3>Introduction</h3>
+              <p>Regular two-wheeler maintenance helps improve vehicle performance, fuel efficiency, reliability and road safety. Whether you ride a motorcycle or a scooter, following a preventive maintenance routine can help identify potential problems early and reduce unexpected repair costs.</p>
+              <p>This guide explains the essential maintenance tasks, recommended inspection intervals and safety precautions every two-wheeler owner should know.</p>
+
+              <h3>1. Check engine oil regularly</h3>
+              <p>Engine oil lubricates internal engine components, reduces friction and helps control heat.</p>
+              <ol>
+                <li>Park the vehicle on level ground and follow the manufacturer’s instructions for checking the oil level.</li>
+                <li>Check the oil level using the dipstick or inspection window, as applicable.</li>
+                <li>Ensure the oil level is within the recommended range.</li>
+                <li>Top up or replace the oil only with the grade and specification recommended in the owner’s manual.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> Avoid overfilling the engine with oil. Follow the manufacturer’s recommended oil-change interval.</p>
+
+              <h3>2. Inspect tyre pressure and condition</h3>
+              <p>Correct tyre pressure supports vehicle stability, braking performance and tyre life.</p>
+              <ol>
+                <li>Check tyre pressure when the tyres are cold.</li>
+                <li>Use a reliable pressure gauge.</li>
+                <li>Compare the reading with the manufacturer’s recommended pressure, usually listed in the owner’s manual or on the vehicle label.</li>
+                <li>Inspect the tyres for cracks, cuts, punctures, uneven wear and embedded objects.</li>
+                <li>Replace tyres when the tread reaches the manufacturer’s wear limit or when damage makes them unsafe.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> Do not use a generic tyre-pressure value for every vehicle. Follow the specifications for your model and tyre configuration.</p>
+
+              <h3>3. Maintain the chain and sprockets</h3>
+              <p>Motorcycles with chain drive require regular chain inspection, cleaning, lubrication and tension adjustment. Most scooters use a different transmission system and may not require external chain maintenance.</p>
+              <ol>
+                <li>Switch off the engine and secure the motorcycle before inspection.</li>
+                <li>Check the chain for excessive slack, rust, stiff links or unusual wear.</li>
+                <li>Clean and lubricate it using a suitable product according to the manufacturer’s instructions.</li>
+                <li>Check chain slack at the specified measurement point.</li>
+                <li>Have the chain tension adjusted if it is outside the recommended range.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> Never clean, lubricate or adjust a chain while the engine is running. Incorrect chain tension can damage components and affect safety.</p>
+
+              <h3>4. Inspect the braking system</h3>
+              <p>The braking system is essential for safe riding and should be checked regularly.</p>
+              <ol>
+                <li>Check the front and rear brake levers or pedal for normal operation.</li>
+                <li>Inspect the brake fluid level on hydraulic systems, where applicable.</li>
+                <li>Look for brake-fluid leaks around the master cylinder, hoses and calipers.</li>
+                <li>Check brake pads or shoes for wear according to the manufacturer’s specifications.</li>
+                <li>Pay attention to unusual noises, excessive lever travel, vibration or reduced braking performance.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> If the brakes feel weak, the lever becomes unusually soft or a leak is visible, stop riding and arrange a professional inspection.</p>
+
+              <h3>5. Check the battery and electrical system</h3>
+              <p>The battery supplies electrical power for starting and other vehicle systems.</p>
+              <ol>
+                <li>Check whether the engine starts normally.</li>
+                <li>Inspect accessible battery terminals for corrosion or loose connections.</li>
+                <li>Check the headlamp, tail lamp, brake light, turn indicators, horn and instrument panel.</li>
+                <li>Follow the owner’s manual for battery care and charging procedures.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> Do not short-circuit battery terminals or attempt repairs without the necessary knowledge. Have damaged wiring or persistent starting problems inspected by a qualified technician.</p>
+
+              <h3>6. Clean the air filter</h3>
+              <p>The air filter prevents dust and other particles from entering the engine. A clogged or damaged filter can affect performance and fuel consumption.</p>
+              <ol>
+                <li>Refer to the owner’s manual for the air-filter inspection interval.</li>
+                <li>Have the filter inspected and cleaned or replaced as specified.</li>
+                <li>Use only the cleaning method approved for that filter type.</li>
+                <li>Ensure the filter housing is correctly closed after servicing.</li>
+              </ol>
+              <p>Some filters are designed for replacement rather than cleaning.</p>
+
+              <h3>7. Monitor coolant and engine temperature</h3>
+              <p>Liquid-cooled two-wheelers use coolant to regulate engine temperature. Air-cooled models have different cooling requirements.</p>
+              <h4>For liquid-cooled vehicles</h4>
+              <ol>
+                <li>Check the coolant level using the designated reservoir when the engine is cool.</li>
+                <li>Inspect for visible coolant leaks.</li>
+                <li>Use the coolant type specified by the manufacturer.</li>
+                <li>Arrange an inspection if the engine repeatedly overheats or coolant levels drop unexpectedly.</li>
+              </ol>
+              <p class="warn"><strong>Important:</strong> Never open a radiator cap while the engine is hot. Pressurised coolant can cause severe burns.</p>
+
+              <h3>8. Follow the scheduled service plan</h3>
+              <p>Routine servicing helps detect wear and mechanical issues before they become serious. A typical maintenance schedule may include the following.</p>
+              <div class="tablewrap" role="region" aria-label="Typical maintenance schedule" tabindex="0">
+                <table>
+                  <thead><tr><th scope="col">Component</th><th scope="col">Maintenance activity</th></tr></thead>
+                  <tbody>
+                    <tr><td>Engine oil</td><td>Check and replace at the specified interval</td></tr>
+                    <tr><td>Tyres</td><td>Check pressure and condition regularly</td></tr>
+                    <tr><td>Brakes</td><td>Inspect for wear and correct operation</td></tr>
+                    <tr><td>Chain drive</td><td>Inspect, clean, lubricate and adjust as required</td></tr>
+                    <tr><td>Battery and lights</td><td>Check condition and operation</td></tr>
+                    <tr><td>Air filter</td><td>Inspect, clean or replace as specified</td></tr>
+                    <tr><td>Coolant</td><td>Check level and replace at the specified interval, where applicable</td></tr>
+                    <tr><td>General inspection</td><td>Follow the manufacturer’s service schedule</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>The exact interval varies by make, model, mileage, age and riding conditions. Always consult the owner’s manual.</p>
+
+              <h3>9. Keep the two-wheeler clean</h3>
+              <p>Regular cleaning removes dust, mud and road grime that can conceal damage or contribute to corrosion.</p>
+              <ul>
+                <li>Use a suitable vehicle-cleaning solution and a soft cloth.</li>
+                <li>Avoid directing high-pressure water at electrical connectors, bearings, seals or other sensitive components.</li>
+                <li>Dry the vehicle properly after washing.</li>
+                <li>Check for loose fasteners, visible leaks or damage during cleaning.</li>
+                <li>Keep the chain lubricated if the vehicle uses a chain drive.</li>
+              </ul>
+
+              <h3>10. Recognise warning signs early</h3>
+              <p>Do not ignore unusual changes in vehicle behaviour. Seek professional inspection if you notice:</p>
+              <ul>
+                <li>Difficulty starting the engine.</li>
+                <li>Unusual engine or transmission noises.</li>
+                <li>Reduced braking performance.</li>
+                <li>Persistent overheating.</li>
+                <li>Fuel, oil or coolant leaks.</li>
+                <li>Excessive vibration or unstable handling.</li>
+                <li>Warning lights that remain illuminated.</li>
+              </ul>
+              <p>Avoid continuing to ride when a problem could affect safe vehicle operation.</p>
+
+              <h3>Conclusion</h3>
+              <p>Maintaining a two-wheeler involves regular inspections, correct fluid levels, tyre care, brake checks, electrical-system checks and scheduled servicing. Following the manufacturer’s recommendations and addressing warning signs early can help maintain vehicle reliability and riding safety.</p>
+              <p><em>Disclaimer: This article provides general maintenance information. Vehicle-specific procedures, specifications and service intervals must be confirmed in the manufacturer’s owner’s manual. Repairs involving critical safety systems should be performed by a qualified technician.</em></p>
+            </div>
+          </details>
+        </li>
+
+        <li id="kutties-plus">
+          <span class="title">YouTube content planning and channel management for Kutties Plus</span>
+          <span class="kind">Case study, children’s Tamil YouTube channel</span>
+          <p>Kutties Plus is a children’s YouTube channel with Tamil rhymes, moral stories and relatable stories inspired by children’s everyday experiences. I help manage the channel by planning video ideas, developing story concepts and scheduling selected videos, typically for Friday evenings.</p>
+          <div class="links"><a href="https://www.youtube.com/@KuttiesPlusTamil/videos" target="_blank" rel="noopener">Watch the Kutties Plus channel on YouTube</a></div>
+          <h4>My contributions</h4>
+          <ul>
+            <li>Planned and organised video content featuring Tamil rhymes, moral stories and children’s storytelling.</li>
+            <li>Developed relatable video ideas from everyday experiences, including visiting Grandma’s home, exploring vegetable and flower gardens, and searching for a baby goat.</li>
+            <li>Contributed to story concepts and narration planning to structure engaging, child-friendly videos.</li>
+            <li>Scheduled selected videos, typically for Friday evenings, to keep a consistent publishing routine.</li>
+            <li>Considered children’s interests and familiar experiences when developing video themes.</li>
+          </ul>
+          <h4>Sample content ideas</h4>
+          <ol>
+            <li><strong>A Visit to Grandma’s Home.</strong> A story inspired by family visits and everyday discoveries.</li>
+            <li><strong>Exploring the Vegetable Garden.</strong> A child-centred story about discovering vegetables and nature.</li>
+            <li><strong>Where Is the Baby Goat?</strong> A playful adventure built around curiosity and discovery.</li>
+            <li><strong>Tamil Rhymes and Moral Stories.</strong> Ideas focused on age-appropriate entertainment and positive messages.</li>
+          </ol>
+          <h4>Sample content calendar</h4>
+          <div class="tablewrap" role="region" aria-label="Sample content calendar" tabindex="0">
+            <table>
+              <caption>Proposed four-week calendar</caption>
+              <thead><tr><th scope="col">Schedule</th><th scope="col">Content idea</th><th scope="col">Objective</th></tr></thead>
+              <tbody>
+                <tr><td>Week 1</td><td>Visiting Grandma’s Home</td><td>Relatable storytelling</td></tr>
+                <tr><td>Week 2</td><td>Vegetable Garden Adventure</td><td>Curiosity and learning</td></tr>
+                <tr><td>Week 3</td><td>Tamil Kids’ Rhyme</td><td>Entertainment</td></tr>
+                <tr><td>Week 4</td><td>Searching for a Baby Goat</td><td>Story engagement</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><em>This is a proposed sample calendar, not a record of confirmed publication dates.</em></p>
+          <h4>Content performance measurement plan</h4>
+          <p>Use YouTube Studio analytics to review views, impressions, click-through rate (CTR), average view duration, audience retention and subscriber growth. These metrics help identify audience preferences and guide future content planning.</p>
+          <h4>Skills demonstrated</h4>
+          <div class="chips"><span class="chip">Content planning</span><span class="chip">Story ideation</span><span class="chip">YouTube video scheduling</span><span class="chip">Narrative development</span><span class="chip">Content calendar management</span><span class="chip">Audience awareness</span><span class="chip">Collaborative content development</span></div>
+          <p class="note">My responsibilities include content planning, story concept development and scheduling selected videos for publication.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills and tools</h2>
+      <p class="sub">What I can take on from manual to published page.</p>
+      <div class="groups">
+        <div class="group"><h3>Content types</h3><div class="chips"><span class="chip">Setup guides</span><span class="chip">Troubleshooting content</span><span class="chip">FAQs</span><span class="chip">Product specifications</span><span class="chip">Customer-facing documentation</span></div></div>
+        <div class="group"><h3>Documentation</h3><div class="chips"><span class="chip">XML authoring</span><span class="chip">Structured content</span><span class="chip">Documentation QA</span><span class="chip">Content management</span><span class="chip">AI-assisted content processing</span><span class="chip">Process compliance</span><span class="chip">Canva</span></div></div>
+        <div class="group"><h3>Languages</h3><div class="chips"><span class="chip">English</span><span class="chip">Tamil</span></div></div>
+        <div class="group"><h3>MS Office</h3><div class="chips"><span class="chip">Excel: VLOOKUP, XLOOKUP, INDEX-MATCH, Pivot Tables</span><span class="chip">Word</span><span class="chip">PowerPoint</span></div></div>
+        <div class="group"><h3>Engineering</h3><div class="chips"><span class="chip">AutoCAD</span><span class="chip">SolidWorks</span><span class="chip">Pro-E</span></div></div>
+        <div class="group"><h3>Cloud and DevOps (training)</h3><div class="chips"><span class="chip">Linux</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">CI/CD</span><span class="chip">Ansible</span><span class="chip">Terraform</span><span class="chip">JIRA</span></div></div>
+      </div>
+    </section>
+
+    <section class="edu" id="education">
+      <h2>Education and certifications</h2>
+      <h3>Education</h3>
+      <p><strong>B.E. in Mechanical Engineering</strong>, Priyadarshini Engineering College, Vaniyambadi</p>
+      <p><strong>Diploma in Mechanical Engineering</strong>, Priyadarshini Polytechnic College, Vaniyambadi</p>
+      <h3>Certifications</h3>
+      <p>Certificate Course in Technical Writing</p>
+      <p>Certificate Course in AWS and DevOps</p>
+      <p>Certificate Course in HVAC, Plumbing and Fire Fighting with AutoCAD</p>
+      <h3>Training projects</h3>
+      <p>Built an end-to-end CI/CD pipeline (Git, Jenkins, Docker, Prometheus, Nexus, SonarQube) during DevOps training.</p>
+      <p>Designed a screw jack in AutoCAD; designed and fabricated a V-block vice; analysed an axle shaft design.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Let’s work together</h2>
+      <p>I’m open to technical writing and documentation projects. Send me a short brief and I’ll reply with how I can help.</p>
+      <div class="btns"><a class="btn primary" href="mailto:sridharsrimech@gmail.com">sridharsrimech@gmail.com</a><a class="btn ghost" href="https://www.youtube.com/@KuttiesPlusTamil/videos" target="_blank" rel="noopener">Kutties Plus on YouTube</a></div>
+    </section>
+  </main>
+
+  <footer>Sridhar S, Technical Writer</footer>
+</div>
+</body>
+</html>
